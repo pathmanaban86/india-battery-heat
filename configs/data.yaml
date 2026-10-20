@@ -1,0 +1,27 @@
+# Data sources and local paths (relative to the repository root)
+power:
+  url: "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M,ALLSKY_SFC_SW_DWN,WS2M&community=RE&latitude={lat}&longitude={lon}&start={start}&end={end}&time-standard=LST&format=CSV"
+  chunks: [[2001, 2005], [2006, 2010], [2011, 2015], [2016, 2020], [2021, 2025]]
+  raw_dir: data/raw/power
+oni:
+  url: "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt"
+  path: data/raw/oni.txt
+wu2026:                       # optional: data of Wu et al. (2026), Nature Climate Change, for the car comparison
+  url: "https://zenodo.org/api/records/17173892/files/Code_Data_EV_Batt_Clim_Chang_main.zip/content"
+  zip: data/raw/wu2026.zip
+  dir: data/raw/wu2026
+  city_map:                   # this study -> Wu et al. city identifier
+    Ahmedabad: AHMADABAD_49591
+    Bengaluru: BANGALORE_54921
+    Bhopal: BHOPAL_49761
+    Chennai: CHENNAI_54883
+    Indore: INDORE_49951
+    Jaipur: JAIPUR_47089
+    Kolkata: KOLKATA_49811
+    Mumbai: MUMBAI_52062
+    Patna: PATNA_48091
+    Pune: PUNE_52488
+    Surat: SURAT_50889
+    Visakhapatnam: VISAKHAPATNAM_53045
+processed: data/processed/india_hourly_2001_2025.parquet
+years: [2001, 2025]

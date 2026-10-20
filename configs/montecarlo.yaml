@@ -1,0 +1,16 @@
+# Joint Monte Carlo over duty-profile and thermal parameters (Table 8)
+samples_per_city: 40
+horizon_years: 10
+seeds: {base: 1000}       # seed = base + 10*city_index + vehicle_index (E2W=0, E3W=1)
+E2W: {km: [15, 50], Wh_per_km: [30, 40], charge_start_hours: [19, 20, 21], charger_kW: [0.7, 1.2]}
+E3W: {km_with_midday_charge: [80, 160], km_without_midday_charge: [80, 120], charger_kW: [2.0, 3.0]}
+thermal_multipliers: {tau_log_uniform: [0.5, 2.0], k_sol_uniform: [0.5, 1.5], dT_self_uniform: [0.0, 2.0]}
+models: {E2W: {NMC: NMC_Gr_50Ah_B1, LFP: Lfp_Gr_SonyMurata3Ah_Battery}, E3W: {NMC: NMC_Gr_50Ah_B1, LFP: Lfp_Gr_250AhPrismatic}}
+alternative_priors:        # importance re-weighting (Table 14)
+  lognormal_distance: {sigma_log: 0.5, median_km: {E2W: 25, E3W: 110}}
+  triangular_distance: {mode_km: {E2W: 25, E3W: 120}}
+  peaked_thermal: {tau_lognormal_sigma: 0.35, k_triangular_mode: 1.0, dT_triangular_mode: 1.0}
+self_heating_checks:       # dT_drive/dT_charge (K) for the comparison with measured module temperature rise
+  reference: [4, 2]
+  rise_5K_per_trip: [15, 5]
+  rise_8K_per_trip: [24, 8]

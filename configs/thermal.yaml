@@ -1,0 +1,13 @@
+# Lumped pack thermal model, Eq. (2)-(3) of the paper:
+#   tau dTb/dt = Teq - Tb,  Teq = Ta + k_sol*G + dT_self   (dT_self only while driving/charging)
+# tau, tau_fan in hours; k_sol in K m2/W; dT_self in K (driving, charging)
+systems:
+  E2W:  {tau: 2.5,  tau_fan: 0.75, k_sun: 0.010, k_shade: 0.002, dT_drive: 4, dT_charge: 2}
+  E3W:  {tau: 4.0,  tau_fan: 1.5,  k_sun: 0.008, k_shade: 0.002, dT_drive: 3, dT_charge: 3}
+  BESS: {tau: 10.0, tau_fan: 10.0, k_sun: 0.006, k_shade: 0.006, dT_drive: 2, dT_charge: 2}
+  CAR:  {tau: 6.0,  tau_fan: 6.0,  k_sun: 0.006, k_shade: 0.003, dT_drive: 2, dT_charge: 2}
+cooling:
+  hvac30: {set_point: 30.0}
+  hvac25: {set_point: 25.0}
+  liquid35: {limit_in_operation: 35.0}
+# 'mixed' parking uses the mean of k_sun and k_shade

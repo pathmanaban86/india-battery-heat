@@ -1,0 +1,12 @@
+# BESS stress cases (Table 18). tau in h, k in K m2/W, dT = self-heating while cycling (K),
+# hvac = set point (degC), cap = max cooling below ambient (K), hs = rack hot-spot offset (K)
+cases:
+  reference passive (0.4C):                         {crate: 0.4, tau: 10, k: 0.006, dT: 2,   hvac: null, cap: null, hs: 0}
+  HVAC 30 ideal (0.4C):                             {crate: 0.4, tau: 10, k: 0.006, dT: 2,   hvac: 30,   cap: null, hs: 0}
+  HVAC 30 undersized + hot spot (0.4C):             {crate: 0.4, tau: 10, k: 0.006, dT: 2,   hvac: 30,   cap: 8,    hs: 5}
+  HVAC 30 undersized + hot spot (0.6C):             {crate: 0.6, tau: 10, k: 0.006, dT: 4.5, hvac: 30,   cap: 8,    hs: 5}
+  poor airflow + hot spot (0.4C):                   {crate: 0.4, tau: 6,  k: 0.009, dT: 4,   hvac: null, cap: null, hs: 5}
+  poor airflow + hot spot (0.6C):                   {crate: 0.6, tau: 6,  k: 0.009, dT: 9,   hvac: null, cap: null, hs: 5}
+  poor airflow + undersized HVAC + hot spot (0.4C): {crate: 0.4, tau: 6,  k: 0.009, dT: 4,   hvac: 30,   cap: 8,    hs: 5}
+  poor airflow + undersized HVAC + hot spot (0.6C): {crate: 0.6, tau: 6,  k: 0.009, dT: 9,   hvac: 30,   cap: 8,    hs: 5}
+heat_year_cases: [HVAC 30 undersized + hot spot (0.6C), poor airflow + hot spot (0.6C), poor airflow + undersized HVAC + hot spot (0.6C)]

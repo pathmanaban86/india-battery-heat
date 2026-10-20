@@ -1,0 +1,39 @@
+# Key numbers of the paper (computed with run_reproducibility.key_numbers from the published runs).
+# quick: quantities that do not depend on the full set of cities.
+tolerance:
+  abs: 0.01
+  rel: 0.001
+full:
+  t80_E2W_NMC_sun_median: 5.892
+  t80_E2W_LFP_sun_median: 16.1233
+  t80_E3W_NMC_sun_median: 5.3198
+  t80_E3W_LFP_sun_median: 17.6291
+  t80_BESS_passive_median: 22.6996
+  t80_E2W_NMC_sun_Bikaner: 5.2404
+  Q10_E2W_NMC_sun_Bikaner: 0.6891
+  Tb_p99_E2W_sun_Bikaner: 49.5188
+  dQ10_E2W_NMC_cap80_median: 4.9684
+  dQ10_E2W_NMC_shade_median: 2.1277
+  dQ10_E2W_NMC_fan_median: 0.7063
+  calendar_share_E2W_NMC_median: 94.0749
+  heat_year_r_E2W_NMC: 0.9545
+  enso_strong_decaying_E2W_NMC_diff: 1.6383
+  enso_strong_decaying_E2W_NMC_p: 0.0156
+  enso_developing_E2W_NMC_diff: 1.0258
+  enso_developing_E2W_NMC_p: 0.0598
+  ensemble_E2W_NMC_t80_min: 5.8838
+  ensemble_E2W_NMC_t80_max: 16.1233
+  mc_E2W_NMC_cap80_median: 4.4561
+  mc_E2W_NMC_P_cap80_gt_shade: 100.0
+  mc_E2W_NMC_P_shade_gt_fan: 99.5833
+  bess_reference_t80: 22.7215
+  bess_joint_0.6C_t80: 23.0227
+  selfheat_8K_dQ10_E2W_NMC: -2.4812
+  erickshaw_Q130_min_pct: 96.6962
+  erickshaw_Q130_max_pct: 98.8058
+quick:
+  t80_E2W_NMC_sun_Bikaner: 5.2404
+  Q10_E2W_NMC_sun_Bikaner: 0.6891
+  Tb_p99_E2W_sun_Bikaner: 49.5188
+  erickshaw_Q130_min_pct: 96.6962
+  erickshaw_Q130_max_pct: 98.8058

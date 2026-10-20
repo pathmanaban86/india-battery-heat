@@ -1,0 +1,19 @@
+# BLAST-Lite cell models. reference = model used in the main runs for each chemistry label.
+reference:
+  NMC: NMC_Gr_50Ah_B1
+  LFP: Lfp_Gr_SonyMurata3Ah_Battery        # E2W
+  LFPpris: Lfp_Gr_250AhPrismatic           # E3W and BESS
+ensemble:
+  NMC: [NMC_Gr_50Ah_B1, NMC_Gr_75Ah_A, Nca_Gr_Panasonic3Ah_Battery, Nmc622_Gr_DENSO50Ah_Battery, Nmc111_Gr_Kokam75Ah_Battery]
+  LFP: [Lfp_Gr_SonyMurata3Ah_Battery, Lfp_Gr_250AhPrismatic]
+# Tested cycling temperature range (degC) stated in the BLAST-Lite model documentation
+cycling_range_degC:
+  NMC_Gr_50Ah_B1: [10, 45]
+  NMC_Gr_75Ah_A: [10, 45]
+  Lfp_Gr_250AhPrismatic: [10, 45]
+  Lfp_Gr_SonyMurata3Ah_Battery: [25, 45]
+  Nca_Gr_Panasonic3Ah_Battery: [25, 45]
+  Nmc622_Gr_DENSO50Ah_Battery: [10, 60]
+  Nmc111_Gr_Kokam75Ah_Battery: [0, 55]
+end_of_life: [0.80, 0.75, 0.70]
+sigmoid_guard: true      # set calendar-sigmoid increment to zero when the stress-dependent asymptote falls below the accumulated loss

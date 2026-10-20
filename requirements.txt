@@ -1,0 +1,15 @@
+# Python 3.13.x (tested with 3.13.16). Exact versions used to produce the published results.
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.1
+pyarrow==26.0.0
+PyYAML==6.0.3
+matplotlib==3.11.2
+xarray==2026.9.0
+netCDF4==1.7.5
+requests==2.34.2
+rainflow==3.2.0
+geopy==2.5.0
+# NREL BLAST-Lite 1.1.0, pinned to the commit used in the paper. Install WITHOUT its dependencies,
+# because its optional NSRDB downloader requires h5pyd, which is not used here (see src/models/degradation.py):
+#   pip install --no-deps "blast-lite @ git+https://github.com/NREL/BLAST-Lite.git@b093495b47dc40dd96dba865d91f553619501e94"

@@ -1,0 +1,25 @@
+# Reference duty profiles (Table 3 of the paper). SOC steps per hour are given explicitly
+# (as used for the published runs) so that results reproduce exactly.
+E2W:
+  pack_kWh: 3.0
+  Wh_per_km: 35
+  soc_per_trip_weekday: 0.175      # 15 km x 35 Wh/km / 3 kWh
+  soc_per_trip_weekend: 0.0875     # 7.5 km per trip
+  trips_weekday: [8, 18]
+  trips_weekend: [11, 17]
+  charge_soc_per_hour: 0.217       # 0.65 kW home charger
+  charge_hours: [21, 22]
+E3W:
+  pack_kWh: 8.0
+  soc_per_drive_hour: 0.09         # 120 km/day x 60 Wh/km / 8 kWh over 10 driving hours
+  charge_soc_per_hour: 0.25        # 2 kW
+  plan: [[7,1],[8,1],[9,1],[10,1],[11,1],[12,2],[13,2],[14,1],[15,1],[16,1],[17,1],[18,1],[21,2],[22,2]]   # [hour, mode] 1=drive, 2=charge
+  rest_day: 6                      # Sunday (Monday = 0)
+BESS:
+  soc: [0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1, 0.1,0.5, 0.9,0.9,0.9,0.9,0.9,0.9,0.9, 0.9,0.5, 0.1,0.1,0.1]
+  operating_hours: [10, 11, 19, 20]
+CAR:
+  soc_limit: 0.9
+  soc_per_trip: 0.053              # 20 km x 160 Wh/km / 60 kWh
+  trips: [8, 18]
+  charge_hour: 21

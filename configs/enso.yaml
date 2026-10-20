@@ -1,0 +1,14 @@
+# El Nino definitions tested with year-level permutation tests (Table 16)
+definitions:
+  JJA>=0.5 (developing): {season: JJA, threshold: 0.5}
+  JJA>=1.0:              {season: JJA, threshold: 1.0}
+  JAS>=0.5:              {season: JAS, threshold: 0.5}
+  SON>=0.5:              {season: SON, threshold: 0.5}
+  MJJ>=0.5:              {season: MJJ, threshold: 0.5}
+  DJF>=0.5 (decaying):   {season: DJF, threshold: 0.5}
+  DJF>=1.0:              {season: DJF, threshold: 1.0}
+  annual>=0.5:           {season: annual, threshold: 0.5}
+exact_enumeration_max_events: 5
+random_permutations: 20000
+seed: 1
+erickshaw_protocol: {dods: [0.5, 0.7, 0.85], cycles_per_day: 2, days: 400, measured_loss_per_fec_pct: 0.12, fec_eol: 130}

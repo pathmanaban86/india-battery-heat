@@ -1,0 +1,23 @@
+# Main scenario matrix (28 per city) and heat-year subset
+E2W: {chem: [NMC, LFP], cool: [passive, fan], park: [sun, shade], cap: [1.0, 0.8]}
+E3W: {chem: [LFPpris, NMC], cool: [passive, fan], park: [sun, shade], cap: [1.0]}
+BESS: {chem: [LFPpris], cool: [passive, hvac30, hvac25], park: [sun], cap: [0.9]}
+CAR: {chem: [NMC], cool: [liquid35], park: [mixed], cap: [0.9]}
+heat_year:                 # [sys, chem, cool, park, cap] simulated year by year from a fresh battery
+  - [E2W, NMC, passive, sun, 1.0]
+  - [E2W, LFP, passive, sun, 1.0]
+  - [E3W, LFPpris, passive, sun, 1.0]
+  - [E3W, NMC, passive, sun, 1.0]
+  - [BESS, LFPpris, passive, sun, 0.9]
+  - [BESS, LFPpris, hvac30, sun, 0.9]
+  - [CAR, NMC, liquid35, mixed, 0.9]
+ensemble_scenarios:        # [sys, cool, park, cap] run with every ensemble model
+  - [E2W, passive, sun, 1.0]
+  - [E2W, passive, shade, 1.0]
+  - [E2W, fan, sun, 1.0]
+  - [E2W, passive, sun, 0.8]
+  - [E3W, passive, sun, 1.0]
+  - [E3W, passive, shade, 1.0]
+  - [E3W, fan, sun, 1.0]
+  - [BESS, passive, sun, 0.9]
+  - [BESS, hvac30, sun, 0.9]
